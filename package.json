@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@worldcoin/idkit": "^0.4.9"
+  }
+}
