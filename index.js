@@ -9,9 +9,11 @@
 // 	/>
 // )
 
-
+const { ethers } = require("ethers");
 
 const   CreateAccount = async()=>{
+	const provider = new ethers.providers.JsonRpcProvider();
+
 
 	const address = "........";
 	const amount  = 1000
@@ -25,13 +27,18 @@ const   CreateAccount = async()=>{
 }
 
 const getBalance  = async( address)=>{
+	const provider = new ethers.providers.JsonRpcProvider();
 
-	const balance  = await.ethers.balance(address)
+
+	const balance  = await provider.balance(address)
 	console.log(balance)
 }
 
 const History = async( address) =>{
-	
+	const provider = new ethers.providers.JsonRpcProvider();
+
+	const  history = await  ethers.history(address)
+
 }
 
 getBalance()
@@ -40,10 +47,11 @@ getBalance()
 
 
 const Transfer  = async ( address,amount ,privateKey)=>{
-	const  send = await.ethers.Transfer(address,amount, privateKey)
-	const  hash  = await.ethers(hassh)
+	const  send = await ethers.Transfer(address,amount, privateKey)
+	const  hash  = await ethers(hash)
 
-	console log(hash,send)
+	
+	console.log(hash)
 
 	return hash
 }
